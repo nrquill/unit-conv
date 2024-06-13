@@ -5,12 +5,12 @@ def main():
 
     FOOT_IN_METER = 3.281
     INCH_IN_CM = 2.54
-    ROUND_AMOUNT = 2
+    DECIMAL_POINT = 2
 
 
     # Add args
     parser = argparse.ArgumentParser(prog='Meters & Feet Converter', description='Calculates the length of human proportions based on a 7.5 Head Ratio') 
-    parser.add_argument("entry", action='store', type=str, metavar="(<length><ft|m><rounding_number>)", help="Usage: <length><ft|m><rounding_number> ~ the rounding number is optional, but is 2 on default")
+    parser.add_argument("entry", action='store', type=str, metavar="(<length><ft|m><decimal_point>)", help="Usage: <length><ft|m><decimal_point> ~ the decimal point is optional, but is 2 on default")
     arg = parser.parse_args().entry
 
     # Validates the arg into a variable
@@ -19,7 +19,7 @@ def main():
 
     # Sets a rounder if entered
     if userArg[2] != '':
-        ROUND_AMOUNT = int(userArg[2])
+        DECIMAL_POINT = int(userArg[2])
 
     # Creates vars
     INPUT = userArg[0]
@@ -28,13 +28,13 @@ def main():
 
     # m to ft
     if UNIT == 'm':
-        result = round((float(INPUT) * FOOT_IN_METER), ROUND_AMOUNT)
+        result = round((float(INPUT) * FOOT_IN_METER), DECIMAL_POINT)
     elif UNIT == 'cm':
-        result = round((float(INPUT) * INCH_IN_CM), ROUND_AMOUNT)
+        result = round((float(INPUT) * INCH_IN_CM), DECIMAL_POINT)
     elif UNIT == 'ft':
-        result = round((float(INPUT) / FOOT_IN_METER), ROUND_AMOUNT)
+        result = round((float(INPUT) / FOOT_IN_METER), DECIMAL_POINT)
     elif UNIT == 'in':
-        result = round((float(INPUT) / INCH_IN_CM), ROUND_AMOUNT)
+        result = round((float(INPUT) / INCH_IN_CM), DECIMAL_POINT)
     
     print(f"{result}ft")
 
