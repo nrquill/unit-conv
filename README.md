@@ -1,4 +1,4 @@
-# A Unit Converting CLI Program
+# Python CLI Program for Unit Conversion
 ## Used Modules:
   - argparse
   - re
