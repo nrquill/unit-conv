@@ -7,6 +7,8 @@
 ### Usage:
     py unit-conv.py <length><unit><decimal_point>
 
+    6.56ft -> 2m
+
 The program will only runs if it's under the right syntax
 
 ### The Regex Key:
