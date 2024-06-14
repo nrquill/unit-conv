@@ -24,19 +24,24 @@ def main():
     # Creates vars
     INPUT = userArg[0]
     UNIT = userArg[1]
+    NEW_UNIT = None
     # Converts for a result
 
     # m to ft
     if UNIT == 'm':
+        NEW_UNIT = 'ft'
         result = round((float(INPUT) * FOOT_IN_METER), DECIMAL_POINT)
     elif UNIT == 'cm':
+        NEW_UNIT = 'in'
         result = round((float(INPUT) * INCH_IN_CM), DECIMAL_POINT)
     elif UNIT == 'ft':
+        NEW_UNIT = 'm'
         result = round((float(INPUT) / FOOT_IN_METER), DECIMAL_POINT)
     elif UNIT == 'in':
+        NEW_UNIT = 'cm'
         result = round((float(INPUT) / INCH_IN_CM), DECIMAL_POINT)
     
-    print(f"{result}ft")
+    print(f"{result}{NEW_UNIT}")
 
 if __name__ == "__main__":
     main()
